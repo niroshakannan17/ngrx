@@ -4,17 +4,17 @@ import { Customer } from '../../../model/customer';
 
 export const customerFeatureKey = 'customer';
 
-export interface State {
+export interface CustomerState {
   customer:Customer[];
 }
 
-export const initialState: State = {
+export const initialState: CustomerState = {
   customer:[]
 };
 
 export const reducer = createReducer(
   initialState,
-  on(CustomerActions.addCustomers,(state:State,{customer})=>({
+  on(CustomerActions.addCustomers,(state:CustomerState,{customer})=>({
     ...state,
     customer:[...state.customer,customer]
   }))
